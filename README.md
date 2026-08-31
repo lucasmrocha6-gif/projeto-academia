@@ -1,1 +1,1 @@
-# projeto-academia
+O Conexão Personal é uma plataforma que conecta pessoas comuns a instrutores físicos compatíveis com seu ritmo e estilo de vida, indo além da estética para priorizar o bem-estar, a rotina realista e o perfil de cada um, seja para quem quer apenas sair do sedentarismo com caminhadas leves, quem precisa de um acompanhamento acolhedor para dores nas costas, ou quem busca manter a saúde em dia treinando no parque, sem pressão por resultados extremos ou ambiente pesado de academia.
