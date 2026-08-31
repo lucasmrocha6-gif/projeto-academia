@@ -1,0 +1,71 @@
+l
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça seu Login</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="frame">
+
+       
+        <div class="caixa-necessidade">
+            <h3>Qual a necessidade?</h3>
+            <p>Fala o seu, deixe pra você comigo a acessar letras eu bem torinha que trouxe aqui a alta permitida</p>
+        </div>
+
+        
+        <div class="circulo circulo-foco">
+            <span>Foco</span>
+        </div>
+        <span class="circulo circulo-pequeno-1"></span>
+        <span class="circulo circulo-pequeno-2"></span>
+        <span class="circulo circulo-pequeno-3"></span>
+        <span class="circulo circulo-pequeno-4"></span>
+
+        <div class="circulo circulo-libertacao">
+            <span>Libera sua rotina</span>
+        </div>
+
+        <div class="circulo circulo-excelencia">
+            <span>Excelência</span>
+        </div>
+
+        <h1 class="titulo">Faça seu Login:</h1>
+
+        <div class="card-login">
+            <form class="form-login">
+                <input type="text" name="nome" placeholder="Nome">
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="senha" placeholder="Senha">
+                <button type="submit" class="btn-entrar">Entrar</button>
+            </form>
+        </div>
+
+    </div>
+    <script>
+        const formLogin = document.querySelector('.form-login');
+    
+        formLogin.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+    
+            const nome = formLogin.nome.value.trim();
+            const email = formLogin.email.value.trim();
+            const senha = formLogin.senha.value.trim();
+    
+            if (!nome || !email || !senha) {
+                alert('Preencha todos os campos.');
+                return;
+            }
+    
+            
+            localStorage.setItem('usuarioNome', nome);
+    
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>

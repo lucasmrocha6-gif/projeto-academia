@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Personal</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+
+    <div class="pagina-perfil">
+
+
+        <header class="topo-perfil">
+            <span class="nome-app">Nome</span>
+            <button class="btn-voltar">Voltar para Página inicial</button>
+        </header>
+
+        
+        <main class="conteudo-perfil">
+
+        
+            <section class="coluna-principal">
+
+                <div class="cabecalho-personal">
+                    <div class="avatar">RS</div>
+                    <div class="dados-personal">
+                        <h1>Roger Santos</h1>
+                        <p>CREF 003421-Grse · verificado · Zona Sul - Aracaju</p>
+                    </div>
+                    <button class="btn-contato">Entrar em contato</button>
+                </div>
+
+                <div class="secao-sobre">
+                    <h2>Sobre</h2>
+                    <p>Especialista em iniciantes e em idosos, com o foco de ensinar postura correta e como fazer exercícios</p>
+                </div>
+
+                <div class="lista-avaliacoes">
+
+                    <div class="avaliacao">
+                        <div class="estrelas">★★★★★</div>
+                        <p class="autor-avaliacao">Fernanda L.</p>
+                        <p class="texto-avaliacao">Me ensinou a fazer a postura certa.</p>
+                    </div>
+
+                    <div class="avaliacao">
+                        <div class="estrelas">★★★★★</div>
+                        <p class="autor-avaliacao">João p.</p>
+                        <p class="texto-avaliacao">Muito atencioso com meu pai de 71 anos</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+            <aside class="coluna-lateral">
+
+                <div class="box-info">
+                    <h3>Especialidades</h3>
+                    <p>Iniciantes na academia</p>
+                    <p>Treino para idosos</p>
+                </div>
+
+                <div class="box-info">
+                    <h3>Certificados</h3>
+                    <p>Formado em Educação física</p>
+                    <p>CREF 003421-Grse</p>
+                </div>
+
+                <div class="box-info">
+                    <h3>Disponibilidade</h3>
+                    <p>segunda a sexta 17h às 20h</p>
+                </div>
+
+            </aside>
+
+        </main>
+
+    </div>
+    <script> const btnVoltar = document.querySelector('.btn-voltar');
+        btnVoltar.addEventListener('click', function() {
+            window.location.href = 'central.html';
+        });
+    
+        const btnContato = document.querySelector('.btn-contato');
+        btnContato.addEventListener('click', function() {
+            window.location.href = 'contato.html';
+        });</script>
+   
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Central</title>
+    <link rel="stylesheet" href="central.css">
+</head>
+<body>
+
+    <main class="pagina-central">
+
+        <span class="tag-topo">Página central</span>
+
+        <section class="hero">
+
+            <div class="hero-texto">
+                <h1>Ache o personal certo pro seu momento</h1>
+                <p>Filtre o personal certo por especialização - iniciante, idoso, gestante, reabilitação - e treine com quem realmente atenda a sua necessidade</p>
+
+                <div class="hero-botoes">
+                    <button class="btn-primario" id="btn-encontrar-personal">Encontrar meu personal</button>
+                    <button class="btn-secundario">Sou personal</button>
+                </div>
+            </div>
+
+            <div class="hero-imagem">
+                <img src="casal-treino.jpg" alt="Casal treinando com o app">
+
+                <div class="card-verificado">
+                    <span class="selo-verificado">✓ VERIFICADO</span>
+                    <div class="card-verificado-conteudo">
+                        <div class="foto-personal"></div>
+                        <div class="dados-personal">
+                            <h3>Bruna Santos</h3>
+                            <p class="especialidade">Personal Trainer</p>
+                            <p class="localizacao">1.5 / 5 avaliações</p>
+                            <p class="localizacao">São Paulo, SP</p>
+                        </div>
+                    </div>
+                    <div class="especialidades">
+                        <span>Especialidades</span>
+                        <div class="tags-especialidades">
+                            <span class="tag">Emagrecimento</span>
+                            <span class="tag">Idoso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="cards-info">
+
+            <div class="info-card">
+                <h3>Diga o que você precisa</h3>
+                <p>Escolha especialização, endereço de peso, treino cardíaco, dieta e recepção</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Compare personais verificados</h3>
+                <p>Todos com CREF confirmado, avaliações reais e histórico de atendimento</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Marque sua primeira consulta</h3>
+                <p>Veja o perfil completo e entre em contato direto com o profissional</p>
+            </div>
+
+        </section>
+
+    </main>
+    <script>
+        const nomeSalvo = localStorage.getItem('usuarioNome');
+        if (nomeSalvo) {
+            console.log('Usuário logado:', nomeSalvo);
+        }
+    
+        const btnEncontrarPersonal = document.getElementById('btn-encontrar-personal');
+        btnEncontrarPersonal.addEventListener('click', function() {
+            window.location.href = 'consulta.html';
+        });
+    </script>
+
+</body>
+</html>

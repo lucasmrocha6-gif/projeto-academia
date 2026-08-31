@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.frame-chat {
+    width: 420px;
+    max-width: 95%;
+    border: 2px solid #16d1b2;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f3f1ef;
+}
+
+
+.topo-chat {
+    background-color: #16d1b2;
+    color: #ffffff;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo-chat h1 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.btn-sair {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-sair svg {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-sair:hover {
+    transform: scale(1.1);
+}
+
+
+.area-conversa {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.mensagem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.mensagem-esquerda {
+    justify-content: flex-start;
+}
+
+.mensagem-direita {
+    justify-content: flex-end;
+}
+
+
+.avatar-nome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #1c1c1c;
+}
+
+.avatar-nome span {
+    font-size: 0.65rem;
+    color: #4a4a4a;
+}
+
+
+
+.balao {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 12px 15px;
+    max-width: 260px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.balao p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #2a2a2a;
+}
+
+
+@media (max-width: 480px) {
+    .balao {
+        max-width: 190px;
+    }
+}

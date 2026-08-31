@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contato</title>
+    <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+
+    <div class="frame-chat">
+
+    
+        <header class="topo-chat">
+            <h1>Página de contato</h1>
+            <button class="btn-sair" title="Sair">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+            </button>
+        </header>
+
+        
+        <main class="area-conversa">
+
+            <div class="mensagem mensagem-esquerda">
+                <div class="avatar-nome">
+                    <div class="avatar"></div>
+                    <span>Lucas</span>
+                </div>
+                <div class="balao">
+                    <p>Oi, eu gostaria de contratar o seu serviço de personal para iniciantes.</p>
+                </div>
+            </div>
+
+            <div class="mensagem mensagem-direita">
+                <div class="balao">
+                    <p>Oi meu nome é Roger, eu sou o personal, você gostaria de qual serviço?</p>
+                </div>
+                <div class="avatar-nome">
+                    <div class="avatar"></div>
+                    <span>Roger</span>
+                </div>
+            </div>
+
+            <div class="mensagem mensagem-esquerda">
+                <div class="avatar-nome">
+                    <div class="avatar"></div>
+                    <span>Lucas</span>
+                </div>
+                <div class="balao">
+                    <p>Eu gostaria de você fizesse um treino personalizado para minha necessidade.</p>
+                </div>
+            </div>
+
+            <div class="mensagem mensagem-direita">
+                <div class="balao">
+                    <p>Tenho dois planos para oferecer.<br>
+                    Duas vezes na semana: R$50<br>
+                    Três vezes na semana: R$80</p>
+                </div>
+                <div class="avatar-nome">
+                    <div class="avatar"></div>
+                    <span>Roger</span>
+                </div>
+            </div>
+
+            <div class="mensagem mensagem-esquerda">
+                <div class="avatar-nome">
+                    <div class="avatar"></div>
+                    <span>Lucas</span>
+                </div>
+                <div class="balao">
+                    <p>Eu quero contratar o plano duas vezes na semana.</p>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+    <script>
+        const btnVoltar = document.querySelector('.btn-voltar');
+        btnVoltar.addEventListener('click', function() {
+            window.location.href = 'central.html';
+        });
+    
+        const btnContato = document.querySelector('.btn-contato');
+        btnContato.addEventListener('click', function() {
+            window.location.href = 'contato.html';
+        });
+    </script>
+</body>
+</html>

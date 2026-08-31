@@ -1,0 +1,137 @@
+
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Personal</title>
+    <link rel="stylesheet" href="consulta.css">
+</head>
+<body>
+
+    <header class="header-consulta">
+        <div class="header-texto">
+            <h1>Consulta de Personal</h1>
+            <p>Busca por nome, departamento e estado, para ver os dados do colaborador</p>
+        </div>
+        <a href="cadastro.html" class="botao-sair" title="Voltar ao cadastro">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        </a>
+    </header>
+
+    <section class="filtros-container">
+        <div class="filtro-grupo">
+            <label for="filtroNome">Nome do personal</label>
+            <input type="text" id="filtroNome" placeholder="Ex: Claúdia, Roger...">
+        </div>
+        <div class="filtro-grupo">
+            <label for="filtroEspecializacao">Especialização</label>
+            <div class="select-wrapper">
+                <select id="filtroEspecializacao">
+                    <option value="todos">Todos</option>
+                </select>
+            </div>
+        </div>
+        <div class="filtro-grupo">
+            <label for="filtroEstado">Estado</label>
+            <div class="select-wrapper">
+                <select id="filtroEstado">
+                    <option value="todos">Todos</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <main class="container-cards" id="listaPersonals">
+        <div class="card">
+            <div class="card-conteudo">
+                <div class="card-header">
+                    <div class="foto-perfil">Foto</div>
+                    <h2>Jonathan Marinho</h2>
+                </div>
+                <div class="card-body">
+                    <p><strong>Área:</strong> Personal Organizer</p>
+                    <p><strong>Contato:</strong> (79) 9 8877-6547</p>
+                    <p><strong>Gmail:</strong> jonathamar19@gmail.com</p>
+                </div>
+            </div>
+            <button class="btn-perfil"
+                data-nome="Jonathan Marinho"
+                data-nicho="Personal Organizer"
+                data-contato="(79) 9 8877-6547"
+                data-email="jonathamar19@gmail.com">
+                Acessar perfil
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="card-conteudo">
+                <div class="card-header">
+                    <div class="foto-perfil">Foto</div>
+                    <h2>Roger Santos Silva</h2>
+                </div>
+                <div class="card-body">
+                    <p><strong>Área:</strong> Personal Trainer</p>
+                    <p><strong>Contato:</strong> (79) 9 8854-7654</p>
+                    <p><strong>Gmail:</strong> rogersantansi8@gmail.com</p>
+                </div>
+            </div>
+            <button class="btn-perfil"
+                data-nome="Roger Santos Silva"
+                data-nicho="Personal Trainer"
+                data-contato="(79) 9 8854-7654"
+                data-email="rogersantansi8@gmail.com">
+                Acessar perfil
+            </button>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("listaPersonals");
+            const cadastros = JSON.parse(localStorage.getItem("cadastros")) || [];
+
+            if (cadastros.length > 0) {
+                container.innerHTML = cadastros.map(personal => `
+                    <div class="card">
+                        <div class="card-conteudo">
+                            <div class="card-header">
+                                <div class="foto-perfil">Foto</div>
+                                <h2>${personal.nome}</h2>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Área:</strong> ${personal.nicho}</p>
+                                <p><strong>Contato:</strong> ${personal.contato || '(79) 9 9999-9999'}</p>
+                                <p><strong>Gmail:</strong> ${personal.email}</p>
+                            </div>
+                        </div>
+                        <button class="btn-perfil"
+                            data-nome="${personal.nome}"
+                            data-nicho="${personal.nicho}"
+                            data-contato="${personal.contato || '(79) 9 9999-9999'}"
+                            data-email="${personal.email}">
+                            Acessar perfil
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            // liga o clique em qualquer botão "Acessar perfil" (fixo ou gerado dinamicamente)
+            container.addEventListener("click", (e) => {
+                const botao = e.target.closest(".btn-perfil");
+                if (!botao) return;
+
+                const personalSelecionado = {
+                    nome: botao.dataset.nome,
+                    nicho: botao.dataset.nicho,
+                    contato: botao.dataset.contato,
+                    email: botao.dataset.email
+                };
+
+                localStorage.setItem("personalSelecionado", JSON.stringify(personalSelecionado));
+                window.location.href = "perfil.html";
+            });
+        });
+    </script>
+</body>
+</html>
