@@ -10,7 +10,6 @@
 
     <div class="frame">
 
-        <!-- Círculos decorativos -->
         <span class="circulo circulo-1"></span>
         <span class="circulo circulo-2"></span>
         <span class="circulo circulo-3"></span>
@@ -27,20 +26,24 @@
                 <div class="form-campos">
                     <input type="text" name="nome" placeholder="Nome">
                     <input type="email" name="email" placeholder="Email">
-                    <input type="text" name="telefone" placeholder="Telefone">
+                    <input type="text" name="telefone" id="input-telefone" placeholder="Telefone" maxlength="16">
                     <input type="number" name="idade" placeholder="Idade">
                     <input type="text" name="cep" placeholder="CEP">
                 </div>
 
                 <div class="form-imagem">
                     <p>Add imagem de seu próprio</p>
-                    <div class="upload-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+                    <input type="file" id="input-imagem" name="imagem" accept="image/*" hidden>
+
+                    <div class="upload-box" id="upload-box">
+                        <svg id="upload-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 7l9-4 9 4-9 4-9-4z"></path>
                             <path d="M3 12l9 4 9-4"></path>
                             <path d="M3 17l9 4 9-4"></path>
                         </svg>
-                        <span class="upload-plus">+</span>
+                        <span class="upload-plus" id="upload-plus">+</span>
+                        <img id="pre-imagem" src="" alt="Pré-visualização" style="display:none;">
                     </div>
                 </div>
 
@@ -50,6 +53,50 @@
         </div>
 
     </div>
+
+    <script>
+        const uploadbox = document.getElementById('upload-box')
+        const inputimagem = document.getElementById('input-imagem')
+        const preimagem = document.getElementById('pre-imagem')
+        const uploadicon = document.getElementById('upload-icon')
+        const uploadplus = document.getElementById('upload-plus')
+        const inputtelefone = document.getElementById('input-telefone')
+
+        
+        uploadbox.addEventListener('click', () => {
+            inputimagem.click();
+        });
+
+    
+        inputimagem.addEventListener('change', () => {
+            const arquivo = inputimagem.files[0];
+            if (arquivo) {
+                const leitor = new FileReader();
+                leitor.onload = (e) => {
+                    preimagem.src = e.target.result;
+                    preimagem.style.display = 'block';
+                    uploadicon.style.display = 'none';
+                    uploadplus.style.display = 'none';
+                };
+                leitor.readAsDataURL(arquivo);
+            }
+        });
+
+        // Formata o telefone enquanto digita, aceitando só números
+        inputtelefone.addEventListener('input', () => {
+            let valor = inputtelefone.value.replace(/\D/g, '');
+            valor = valor.slice(0, 11);
+
+            if (valor.length > 0) {
+                valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
+            }
+            if (valor.length > 4) {
+                valor = valor.replace(/(\d{1})(\d{4})(\d)/, '$1 $2-$3');
+            }
+
+            inputtelefone.value = valor;
+        });
+    </script>
 
 </body>
 </html>
